@@ -1,12 +1,22 @@
-# Gitbook package info plugin
+# Access package.json information in Gitbook
 
-Access the project's package.json info as a gitbook plugin filter
+Access the project's package.json info as a gitbook plugin filter. This is helpful when you need to refer to information in package.json (like name, version etc.) in the project's documentation maintained as a Gitbook.
+
+Use it for your book, by adding to your book.json:
+
+```
+{
+    "plugins": ["packageinfo"]
+}
+```
+
+then run `gitbook install`.
 
 ## Usage
 
 `{{ "labelString:" : npmPackage('package.key') }}`
 
-## Example
+## Examples
 
 ```
 {{ "Package Name: " | npmPackage() }} => Package Name: gitbook-plugin-packageinfo
