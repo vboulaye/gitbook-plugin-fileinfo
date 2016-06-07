@@ -1,0 +1,30 @@
+{
+  "name": "gitbook-plugin-packageinfo",
+  "version": "0.1.0",
+  "description": "Gitbook Plugin to make the project's package.json data available for gitbook content",
+  "main": "index.js",
+  "engines": {
+    "gitbook": "*"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishekdev/gitbook-plugin-packageinfo.git"
+  },
+  "keywords": [
+    "gitbook",
+    "npm",
+    "package",
+    "version",
+    "packageinfo",
+    "package.json"
+  ],
+  "author": "Abhishek Dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhishekdev/gitbook-plugin-packageinfo/issues"
+  },
+  "homepage": "https://github.com/abhishekdev/gitbook-plugin-packageinfo#readme"
+}
