@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-packageinfo",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Gitbook Plugin to make the project's package.json data available for gitbook content",
   "main": "index.js",
   "engines": {
