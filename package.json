@@ -1,7 +1,7 @@
 {
-  "name": "gitbook-plugin-packageinfo",
+  "name": "gitbook-plugin-fileinfo",
   "version": "1.0.0",
-  "description": "Gitbook Plugin to make the project's package.json data available for gitbook content",
+  "description": "Gitbook Plugin to read a custom file (json or xml) make its content available to the gitbook",
   "main": "index.js",
   "engines": {
     "gitbook": "*"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abhishekdev/gitbook-plugin-packageinfo.git"
+    "url": "git+https://github.com/vboulaye/gitbook-plugin-fileinfo.git"
   },
   "keywords": [
     "gitbook",
@@ -21,10 +21,12 @@
     "packageinfo",
     "package.json"
   ],
-  "author": "Abhishek Dev",
+  "author": "vboulaye",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/abhishekdev/gitbook-plugin-packageinfo/issues"
+    "url": "https://github.com/vboulaye/gitbook-plugin-fileinfo/issues"
   },
-  "homepage": "https://github.com/abhishekdev/gitbook-plugin-packageinfo#readme"
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  }
 }
