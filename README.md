@@ -1,10 +1,10 @@
-# Access package.json information in Gitbook
+# Access file information in Gitbook
 
 
-[![Build Status](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo-img.svg?branch=master)](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo)
+[![Build Status](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo.svg?branch=master)](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo)
 
 
-From https://github.com/abhishekdev/gitbook-plugin-packageinfo
+Built from https://github.com/abhishekdev/gitbook-plugin-packageinfo
 
 Access project file (xml or json) info into the gitbook config object.
 
