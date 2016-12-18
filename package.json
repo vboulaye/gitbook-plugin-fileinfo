@@ -4,10 +4,10 @@
   "description": "Gitbook Plugin to read a custom file (json or xml) make its content available to the gitbook",
   "main": "index.js",
   "engines": {
-    "gitbook": "*"
+    "gitbook": ">=3.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec --timeout 15000"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,15 @@
     "package.json"
   ],
   "author": "vboulaye",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/vboulaye/gitbook-plugin-fileinfo/issues"
   },
   "dependencies": {
     "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "gitbook-tester": "1.4.2",
+    "mocha": "^2.5.3"
   }
 }

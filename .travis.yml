@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+node_js:
+- '4'
+- '6'
+before_script:
+- npm install -g gitbook-cli
+- gitbook install
+#deploy:
+#  provider: npm
+#  email: vboulaye@hotmail.com
+#  api_key:
+#    secure:
+#  on:
+#    tags: true
+#    branch: master

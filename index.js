@@ -1,11 +1,9 @@
 var xml = require("xml2js");
 var fs = require("fs");
 
-
-
 // from https://github.com/Leonidas-from-XIV/node-xml2js/pull/241
 // not sure how this works
-function parseStringSync(str) {
+function parseXmlStringSync(str) {
     var cb, err, retval;
     retval = void 0;
     err = void 0;
@@ -32,19 +30,25 @@ module.exports = {
             var pluginConfig = gitbook.config.get('pluginsConfig.fileinfo', {files: []});
 
             gitbook.log.debug('Reading ' + JSON.stringify(pluginConfig));
+            if (!pluginConfig || !pluginConfig.files) {
+                throw new Error('this plugin needs to be configured in a pluginsConfig.fileinfo section.')
+            }
             pluginConfig.files.forEach(function (fileDef) {
                 var fileContents;
                 try {
                     if (fileDef.path.endsWith(".xml")) {
-                        var fileRawContents = fs.readFileSync(fileDef.path);
-                        fileContents = parseStringSync(fileRawContents);
+                        // not sure if this is really part of the public api
+                        var resolved = gitbook.resolve(fileDef.path);
+                        var fileRawContents = fs.readFileSync(resolved);
+                        fileContents = parseXmlStringSync(fileRawContents);
                     }
                     else {
-                        fileContents = JSON.parse(fs.readFileSync(fileDef.path));
+                        // not sure if this is really part of the public api
+                        var resolved = gitbook.resolve(fileDef.path);
+                        fileContents = JSON.parse(fs.readFileSync(resolved));
                     }
                 } catch (e) {
-                    gitbook.log.error('Error reading package.json');
-                    throw new Error(e);
+                    gitbook.log.error('plugin fileinfo: Could not read '+fileDef.path+', its contents will not be available');
                 }
                 contents[fileDef.name] = fileContents;
             });
