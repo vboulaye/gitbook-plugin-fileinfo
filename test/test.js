@@ -6,14 +6,13 @@ describe('FileInfo', function() {
     it('should correctly replace xml file data in the generated book', function() {
         return tester.builder()
             .withFile('pom.xml','<project><name>projectName</name><version>v1.0</version></project>')
-            .withContent('{{ config.fileinfo.pom.project.version}}')
+            .withContent('{{ config.fileinfo.pom.project.version }}')
             .withBookJson({
                 plugins: ['fileinfo'],
                 pluginsConfig: {
                     fileinfo: {
                         files: [
-                            {name: "pom", path: "pom.xml"},
-                            {name: "package", path: "package.json"}
+                            {name: "pom", path: "./pom.xml"}
                         ]
                     }
                 }
@@ -33,7 +32,6 @@ describe('FileInfo', function() {
                 pluginsConfig: {
                     fileinfo: {
                         files: [
-                            {name: "pom", path: "pom.xml"},
                             {name: "package", path: "package.json"}
                         ]
                     }

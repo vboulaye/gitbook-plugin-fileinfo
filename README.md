@@ -1,5 +1,9 @@
 # Access package.json information in Gitbook
 
+
+[![Build Status](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo-img.svg?branch=master)](https://travis-ci.org/vboulaye/gitbook-plugin-fileinfo)
+
+
 From https://github.com/abhishekdev/gitbook-plugin-packageinfo
 
 Access project file (xml or json) info into the gitbook config object.
@@ -16,14 +20,14 @@ then run `gitbook install`.
 
 ## Usage
 
-Configure it in the pluginsConfig section:
+Configure it in the pluginsConfig section by adding file location definitions where `name` is the tag used in the config to locate the file and `path` the location of the file (relative to the book contents directory):
 
 ```
     "pluginsConfig": {
         "fileinfo": {
           "files": [
-            {"name":"pom", "path":"./pom.xml"},
-            {"name":"json", "path":"./package.json"}
+            {"name":"pom", "path":"pom.xml"},
+            {"name":"json", "path":"package.json"}
           ]
     },
 ```

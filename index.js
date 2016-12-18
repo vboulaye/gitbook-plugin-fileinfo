@@ -16,7 +16,7 @@ function parseXmlStringSync(str) {
         throw err;
     }
     return retval;
-};
+}
 
 module.exports = {
     // Hook process during build
@@ -37,18 +37,18 @@ module.exports = {
                 var fileContents;
                 try {
                     if (fileDef.path.endsWith(".xml")) {
-                        // not sure if this is really part of the public api
-                        var resolved = gitbook.resolve(fileDef.path);
-                        var fileRawContents = fs.readFileSync(resolved);
+                        var resolvedXml = gitbook.resolve(fileDef.path);
+                        var fileRawContents = fs.readFileSync(resolvedXml);
                         fileContents = parseXmlStringSync(fileRawContents);
                     }
                     else {
-                        // not sure if this is really part of the public api
-                        var resolved = gitbook.resolve(fileDef.path);
-                        fileContents = JSON.parse(fs.readFileSync(resolved));
+                        var resolvedJson = gitbook.resolve(fileDef.path);
+                        fileContents = JSON.parse(fs.readFileSync(resolvedJson));
                     }
                 } catch (e) {
-                    gitbook.log.error('plugin fileinfo: Could not read '+fileDef.path+', its contents will not be available');
+                    var message = 'plugin fileinfo: Could not read '+fileDef.path;
+                    gitbook.log.error(message);
+                    throw e;
                 }
                 contents[fileDef.name] = fileContents;
             });
