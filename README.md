@@ -2,9 +2,9 @@
 
 From https://github.com/abhishekdev/gitbook-plugin-packageinfo
 
-Access project file info as a gitbook plugin filter. This is helpful when you need to refer to information in package.json (like name, version etc.) in the project's documentation maintained as a Gitbook.
+Access project file (xml or json) info into the gitbook config object.
 
-Use it for your book, by adding to your book.json:
+You can use it by first adding it to your plugins:
 
 ```
 {
