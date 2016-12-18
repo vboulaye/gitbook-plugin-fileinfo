@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Gitbook Plugin to read a custom file (json or xml) make its content available to the gitbook",
   "main": "index.js",
+  "files": ["index.js"],
   "engines": {
     "gitbook": ">=3.1.0"
   },
@@ -14,12 +15,8 @@
     "url": "git+https://github.com/vboulaye/gitbook-plugin-fileinfo.git"
   },
   "keywords": [
-    "gitbook",
-    "npm",
-    "package",
-    "version",
-    "packageinfo",
-    "package.json"
+    "gitbook", "plugin",
+    "npm"
   ],
   "author": "vboulaye",
   "license": "Apache-2.0",
